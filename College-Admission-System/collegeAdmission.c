@@ -3,7 +3,7 @@
 int main() {
     int year;
     int choice;
-    int internal, external;
+    int internal, external,mainExam;
     char name[50];
 
     printf("====================================\n");
@@ -50,16 +50,16 @@ int main() {
         printf("-------------------------------\n");
 
         // Internal examination
-        printf("\nEnter internal marks (out of 100): ");
+        printf("\nEnter internal marks (out of 20): ");
         scanf("%d", &internal);
 
-        if (internal < 0 || internal > 100) {
+        if (internal < 0 || internal > 20) {
             printf("Invalid internal marks.\n");
             printf("-------------------------------\n");
             break;
         }
 
-        if (internal < 40) {
+        if (internal < 10) {
             printf("Internal exam not qualified.\n");
             printf("You cannot proceed to the external exam.\n");
             printf("-------------------------------\n"); 
@@ -70,16 +70,16 @@ int main() {
         printf("-------------------------------\n");
 
         // External examination
-        printf("\nEnter external marks (out of 100): ");
+        printf("\nEnter external marks (out of 80): ");
         scanf("%d", &external);
 
-        if (external < 0 || external > 100) {
+        if (external < 0 || external > 80) {
             printf("Invalid external marks.\n");
             printf("-------------------------------\n");
             break;
         }
 
-        if (external < 40) {
+        if (external < 35) {
             printf("External exam not qualified.\n");
             printf("You cannot proceed to the next year.\n");
             printf("-------------------------------\n");
@@ -88,6 +88,25 @@ int main() {
 
         printf("External exam qualified!\n");
         printf("-------------------------------\n");
+
+        // Main Examination
+        printf("\nEnter main exam marks (out of 100): ");
+        scanf("%d", &mainExam);
+
+       if (mainExam < 0 || mainExam > 100) {
+       printf("Invalid main exam marks.\n");
+       printf("-------------------------------\n");
+       break;
+       }
+
+       if (mainExam < 40) {
+       printf("Main exam not qualified.\n");
+       printf("You cannot proceed to the next year.\n");
+       printf("-------------------------------\n");
+       break;
+       }
+       printf("Main exam qualified!\n");
+       printf("-------------------------------\n");
 
         if (year < 4) {
             printf("\nCongratulations! Year %d completed.\n", year);
@@ -109,4 +128,3 @@ int main() {
 
     return 0;
 }
-
